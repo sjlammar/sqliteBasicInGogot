@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3 uid="uid://g3tsxc5q5b03"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_pr40c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pr40c")
+
+[node name="BUATTABEL" type="Button" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 40.0
+offset_right = 309.0
+offset_bottom = 91.0
+text = "BUAT TABEL"
+
+[node name="INSERT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 132.0
+offset_right = 302.0
+offset_bottom = 183.0
+text = "INSERT"
+
+[node name="pilihdata" type="Button" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 225.0
+offset_right = 305.0
+offset_bottom = 276.0
+text = "PILIH DATA"
+
+[node name="update" type="Button" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 296.0
+offset_right = 310.0
+offset_bottom = 347.0
+text = "UPDATE DATA"
+
+[node name="hapus" type="Button" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 366.0
+offset_right = 305.0
+offset_bottom = 417.0
+text = "HAPUS DATA"
+
+[node name="kostem" type="Button" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 443.0
+offset_right = 304.0
+offset_bottom = 494.0
+text = "COTUME SELECT"
+
+[node name="boxnama" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 53.0
+offset_right = 628.0
+offset_bottom = 96.0
+
+[node name="boxscore" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 132.0
+offset_right = 611.0
+offset_bottom = 175.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 49.0
+offset_right = 442.0
+offset_bottom = 99.0
+text = "NAMA"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 138.0
+offset_right = 436.0
+offset_bottom = 188.0
+text = "SKOR"
+
+[connection signal="button_down" from="BUATTABEL" to="." method="_on_buattabel_button_down"]
+[connection signal="button_down" from="INSERT" to="." method="_on_insert_button_down"]
+[connection signal="button_down" from="pilihdata" to="." method="_on_pilihdata_button_down"]
+[connection signal="button_down" from="update" to="." method="_on_update_button_down"]
+[connection signal="button_down" from="hapus" to="." method="_on_hapus_button_down"]
+[connection signal="button_down" from="kostem" to="." method="_on_kostem_button_down"]
