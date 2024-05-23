@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://f4rs68la07k8"]
+
+[ext_resource type="Texture2D" uid="uid://i0vydiy488ta" path="res://prototipe/habitaction.png" id="1_u4stt"]
+[ext_resource type="Script" path="res://script/habit_action.gd" id="1_vbsgn"]
+[ext_resource type="Texture2D" uid="uid://111rrf1g557h" path="res://prototipe/habitIcon.png" id="2_1tjwk"]
+
+[node name="HabitAction" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -292.0
+offset_right = 292.0
+offset_bottom = 96.0
+grow_horizontal = 2
+script = ExtResource("1_vbsgn")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "exit"
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_1tjwk")
+
+[node name="Label" type="Label" parent="icon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -11.5
+offset_right = 20.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "habit"
+
+[node name="Minus" type="Button" parent="."]
+layout_mode = 2
+mouse_filter = 1
+icon = ExtResource("1_u4stt")
+
+[node name="Plus" type="Button" parent="."]
+layout_mode = 2
+mouse_filter = 1
+icon = ExtResource("1_u4stt")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Minus" to="." method="_on_minus_button_down"]
+[connection signal="button_down" from="Plus" to="." method="_on_plus_button_down"]

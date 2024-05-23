@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwqvasdxegsi"]
+
+[ext_resource type="Script" path="res://script/habit.gd" id="1_8dcgu"]
+
+[node name="Habit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8dcgu")
+
+[node name="statusContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 637.0
+offset_bottom = 220.0
+
+[node name="add" type="Button" parent="."]
+layout_mode = 2
+offset_left = 257.0
+offset_top = 233.0
+offset_right = 366.0
+offset_bottom = 303.0
+text = "TAMBAHKAN"
+
+[node name="habitList" type="ScrollContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.349
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.199999
+offset_top = -8.04001
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="habitList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 20.0
+
+[connection signal="button_down" from="add" to="." method="_on_add_button_down"]
