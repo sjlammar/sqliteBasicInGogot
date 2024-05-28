@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://s0e6yohd54in"]
+
+[ext_resource type="Script" path="res://UI/low_bar.gd" id="1_k85ib"]
+
+[node name="low_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -115.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_k85ib")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.12549, 0.235294, 0.337255, 1)
+
+[node name="main" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -77.0
+offset_right = 64.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HOME"
+
+[node name="habit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 173.0
+offset_bottom = 128.0
+text = "HABIT"
+
+[node name="task" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = -1.0
+offset_right = 592.0
+offset_bottom = 127.0
+text = "TASK"
+
+[connection signal="button_down" from="main" to="." method="_on_main_button_down"]
+[connection signal="button_down" from="habit" to="." method="_on_habit_button_down"]
+[connection signal="button_down" from="task" to="." method="_on_task_button_down"]

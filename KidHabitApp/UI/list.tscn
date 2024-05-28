@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://i5xvlfm4d7ce"]
+
+[ext_resource type="Texture2D" uid="uid://d17s5pc6uj6xs" path="res://UI/Habit.png" id="1_i28qh"]
+[ext_resource type="Script" path="res://UI/list.gd" id="2_krlys"]
+[ext_resource type="Texture2D" uid="uid://buli6v2yiohfa" path="res://UI/EXIT.png" id="3_vucl7"]
+[ext_resource type="Texture2D" uid="uid://drdq33qkcvac7" path="res://UI/setting.png" id="4_ggmou"]
+
+[node name="list" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_i28qh")
+script = ExtResource("2_krlys")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_right = 446.0
+offset_bottom = 129.0
+editable = false
+
+[node name="delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = -4.0
+offset_right = 516.0
+offset_bottom = 68.0
+icon = ExtResource("3_vucl7")
+flat = true
+
+[node name="edit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 60.0
+offset_right = 516.0
+offset_bottom = 132.0
+icon = ExtResource("4_ggmou")
+flat = true
+
+[connection signal="button_down" from="delete" to="." method="_on_delete_button_down"]
+[connection signal="button_down" from="edit" to="." method="_on_edit_button_down"]

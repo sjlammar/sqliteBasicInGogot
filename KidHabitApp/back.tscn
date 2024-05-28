@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c3fk707h7od6m"]
+
+[node name="back" type="Button"]
+offset_right = 164.0
+offset_bottom = 49.0
+text = "BACK"

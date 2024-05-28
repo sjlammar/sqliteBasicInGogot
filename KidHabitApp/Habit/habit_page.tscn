@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqxylh0f876w4"]
+
+[ext_resource type="PackedScene" uid="uid://disr6a5q2uexd" path="res://bg.tscn" id="1_m0jwr"]
+[ext_resource type="Script" path="res://Habit/habit_page.gd" id="1_uhuxc"]
+[ext_resource type="PackedScene" uid="uid://s0e6yohd54in" path="res://UI/low_bar.tscn" id="2_3li2t"]
+[ext_resource type="PackedScene" uid="uid://dlq8ppss5y24j" path="res://UI/up_bar.tscn" id="3_8fbss"]
+
+[node name="HabitPage" type="Node2D"]
+script = ExtResource("1_uhuxc")
+
+[node name="Bg" parent="." instance=ExtResource("1_m0jwr")]
+
+[node name="low_bar" parent="." instance=ExtResource("2_3li2t")]
+offset_top = 837.0
+offset_right = 640.0
+offset_bottom = 965.0
+
+[node name="up_bar" parent="." instance=ExtResource("3_8fbss")]
+offset_right = 640.0
+
+[node name="ADD" type="Button" parent="."]
+offset_left = 279.0
+offset_top = 290.0
+offset_right = 379.0
+offset_bottom = 329.0
+text = "ADD"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = 366.0
+offset_right = 589.0
+offset_bottom = 815.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="reset" type="Button" parent="."]
+offset_left = 407.0
+offset_top = 292.0
+offset_right = 494.0
+offset_bottom = 332.0
+text = "reset"
+
+[connection signal="button_down" from="ADD" to="." method="_on_add_button_down"]
+[connection signal="button_down" from="reset" to="." method="_on_reset_button_down"]
