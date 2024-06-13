@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi6kdas4ydses"]
+
+[ext_resource type="Script" path="res://admin/admin_low_bar.gd" id="1_436ws"]
+[ext_resource type="Texture2D" uid="uid://btny6qxld110b" path="res://desaign/lowBar.png" id="1_rcoim"]
+[ext_resource type="Texture2D" uid="uid://bvhvgua0f3cdq" path="res://desaign/menu.png" id="2_vs4ry"]
+[ext_resource type="FontFile" uid="uid://ddhtc6ay14j35" path="res://desaign/retro_computer_personal_use.ttf" id="3_k4p1r"]
+
+[node name="adminLowBar" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -183.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_436ws")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_rcoim")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -302.0
+offset_right = 301.0
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="task" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_vs4ry")
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/task"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_k4p1r")
+theme_override_font_sizes/font_size = 33
+text = "task"
+
+[node name="status" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_vs4ry")
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/status"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_k4p1r")
+theme_override_font_sizes/font_size = 33
+text = "status"
+
+[connection signal="button_down" from="HBoxContainer/task" to="." method="_on_task_button_down"]
+[connection signal="button_down" from="HBoxContainer/status" to="." method="_on_status_button_down"]

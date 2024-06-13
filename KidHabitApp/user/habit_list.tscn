@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8myj7ikf1ttt"]
+
+[ext_resource type="Texture2D" uid="uid://cucmlgg6iyj5p" path="res://desaign/task.png" id="1_qqu4v"]
+[ext_resource type="Script" path="res://user/habit_list.gd" id="2_nnr6f"]
+[ext_resource type="FontFile" uid="uid://ddhtc6ay14j35" path="res://desaign/retro_computer_personal_use.ttf" id="2_r4ox2"]
+[ext_resource type="Texture2D" uid="uid://ds2xb81x0cst" path="res://desaign/edit.png" id="3_7h1s7"]
+[ext_resource type="Texture2D" uid="uid://jgysgkcusiiw" path="res://desaign/exit.png" id="4_xv4em"]
+
+[node name="habitList" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qqu4v")
+script = ExtResource("2_nnr6f")
+
+[node name="name" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 403.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("2_r4ox2")
+theme_override_font_sizes/font_size = 21
+placeholder_text = "habit name"
+editable = false
+
+[node name="desc" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 7.0
+offset_right = 563.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("2_r4ox2")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "info"
+editable = false
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.5
+offset_right = 97.5
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_r4ox2")
+disabled = true
+text = "done"
+
+[node name="setting" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("3_7h1s7")
+
+[node name="delete" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_bottom = 67.0
+grow_horizontal = 0
+icon = ExtResource("4_xv4em")
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="button_down" from="setting" to="." method="_on_setting_button_down"]

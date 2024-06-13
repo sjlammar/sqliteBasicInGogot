@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://70l86jcjqf5k"]
+
+[ext_resource type="PackedScene" uid="uid://dlq8ppss5y24j" path="res://UI/up_bar.tscn" id="1_743yj"]
+[ext_resource type="PackedScene" uid="uid://5rgrxxd5wwgv" path="res://background.tscn" id="1_dhaqa"]
+[ext_resource type="Script" path="res://admin/admin_task.gd" id="1_uaa8c"]
+[ext_resource type="Texture2D" uid="uid://cs7c5evnx3ifu" path="res://desaign/play.png" id="3_3kpe7"]
+[ext_resource type="FontFile" uid="uid://ddhtc6ay14j35" path="res://desaign/retro_computer_personal_use.ttf" id="5_jergi"]
+[ext_resource type="PackedScene" uid="uid://bi6kdas4ydses" path="res://admin/admin_low_bar.tscn" id="6_en2fq"]
+
+[node name="adminTask" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uaa8c")
+
+[node name="background" parent="." instance=ExtResource("1_dhaqa")]
+layout_mode = 1
+
+[node name="up_bar" parent="." instance=ExtResource("1_743yj")]
+layout_mode = 1
+
+[node name="add" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -199.0
+offset_right = 80.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_3kpe7")
+
+[node name="Label" type="Label" parent="add"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jergi")
+theme_override_font_sizes/font_size = 21
+text = "add task"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -589.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="adminLowBar" parent="." instance=ExtResource("6_en2fq")]
+layout_mode = 1
+
+[connection signal="button_down" from="add" to="." method="_on_add_button_down"]

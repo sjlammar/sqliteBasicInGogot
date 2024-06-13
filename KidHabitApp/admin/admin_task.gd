@@ -1,5 +1,4 @@
-extends Node2D
-
+extends Control
 @onready var data = DataBase.database
 @onready var Vbox = $ScrollContainer/VBoxContainer
 var taskScene = preload("res://UI/taskItem.tscn")
@@ -29,7 +28,6 @@ func _on_add_button_down():
 	var dt = {
 		"name" : " ",
 		"keterangan": " ",
-		"status": 0
 	}
 	data.insert_row("task", dt)
-	insertRow()
+	get_tree().reload_current_scene()

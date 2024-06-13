@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvq2fnay55nwc"]
+
+[ext_resource type="PackedScene" uid="uid://5rgrxxd5wwgv" path="res://background.tscn" id="1_3xwc8"]
+[ext_resource type="Script" path="res://user/user_task.gd" id="1_nlnxr"]
+[ext_resource type="PackedScene" uid="uid://dlq8ppss5y24j" path="res://UI/up_bar.tscn" id="2_rrjf8"]
+[ext_resource type="PackedScene" uid="uid://s0e6yohd54in" path="res://UI/low_bar.tscn" id="3_jj5g1"]
+[ext_resource type="PackedScene" uid="uid://d0kweg2w3sevq" path="res://user/add.tscn" id="4_j5vhb"]
+
+[node name="userTask" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nlnxr")
+
+[node name="background" parent="." instance=ExtResource("1_3xwc8")]
+layout_mode = 1
+
+[node name="up_bar" parent="." instance=ExtResource("2_rrjf8")]
+layout_mode = 1
+
+[node name="low_bar" parent="." instance=ExtResource("3_jj5g1")]
+layout_mode = 1
+
+[node name="add" parent="." instance=ExtResource("4_j5vhb")]
+layout_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -141.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[connection signal="button_down" from="add" to="." method="_on_add_button_down"]

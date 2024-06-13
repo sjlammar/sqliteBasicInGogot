@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc84dyhmsio15"]
+
+[ext_resource type="Script" path="res://login/register.gd" id="1_mfjde"]
+[ext_resource type="FontFile" uid="uid://ddhtc6ay14j35" path="res://desaign/retro_computer_personal_use.ttf" id="2_h0wq8"]
+[ext_resource type="PackedScene" uid="uid://5rgrxxd5wwgv" path="res://background.tscn" id="2_rrtj7"]
+[ext_resource type="Texture2D" uid="uid://cs7c5evnx3ifu" path="res://desaign/play.png" id="3_roo0f"]
+
+[node name="register" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfjde")
+
+[node name="background" parent="." instance=ExtResource("2_rrtj7")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = 45.0
+offset_right = -75.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 32
+text = "Register"
+
+[node name="Username" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 22
+text = "USERNAME"
+
+[node name="user" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 21
+
+[node name="password" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 22
+text = "PASSWORD"
+
+[node name="pass" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 21
+secret = true
+secret_character = "*"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="back" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_roo0f")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/back"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 21
+text = "back"
+
+[node name="reg" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_roo0f")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/reg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 21
+text = "register"
+
+[node name="debug" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h0wq8")
+theme_override_font_sizes/font_size = 22
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/back" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/reg" to="." method="_on_reg_button_down"]

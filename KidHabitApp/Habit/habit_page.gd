@@ -13,14 +13,16 @@ func _process(delta):
 	pass
 
 func insertRow():
-	var nil = data.select_rows("habit_tipe", "habit_id == 0 OR habit_id > 0 ", ["*"])
+	var nil = data.select_rows("habit_tipe", "id > 0 ", ["*"])
 	for row in nil :
-		addHabit(row["habit_id"],row["tipe_id"])
+		addHabit(row["id"],row["habit_id"], row["tipe_id"],row["status"])
 	
-func addHabit(idH, idT):
+func addHabit(id,hbit,tip,st):
 	var new_habit = habitScene.instantiate()
-	new_habit.habitnow = idH
-	new_habit.tipenow = idT
+	new_habit.idn = id
+	new_habit.hnow = hbit
+	new_habit.tnow = tip
+	new_habit.stat = st
 	Vbox.add_child(new_habit)
 	Vbox.queue_sort()
 

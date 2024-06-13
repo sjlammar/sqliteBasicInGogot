@@ -1,69 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3bxgened128f"]
+[gd_scene load_steps=6 format=3 uid="uid://d3bxgened128f"]
 
-[ext_resource type="Texture2D" uid="uid://drdq33qkcvac7" path="res://UI/setting.png" id="1_678h0"]
-[ext_resource type="Texture2D" uid="uid://d17s5pc6uj6xs" path="res://UI/Habit.png" id="1_frp3j"]
-[ext_resource type="Texture2D" uid="uid://buli6v2yiohfa" path="res://UI/EXIT.png" id="2_5hb7e"]
+[ext_resource type="Texture2D" uid="uid://cucmlgg6iyj5p" path="res://desaign/task.png" id="1_s1y5q"]
 [ext_resource type="Script" path="res://UI/taskItem.gd" id="2_nxhdo"]
+[ext_resource type="Texture2D" uid="uid://ds2xb81x0cst" path="res://desaign/edit.png" id="3_g00px"]
+[ext_resource type="Texture2D" uid="uid://jgysgkcusiiw" path="res://desaign/exit.png" id="4_78br3"]
+[ext_resource type="FontFile" uid="uid://ddhtc6ay14j35" path="res://desaign/retro_computer_personal_use.ttf" id="5_f2q77"]
 
 [node name="taskItem" type="TextureRect"]
 offset_right = 586.0
 offset_bottom = 127.0
-texture = ExtResource("1_frp3j")
+texture = ExtResource("1_s1y5q")
 script = ExtResource("2_nxhdo")
 
-[node name="name" type="LineEdit" parent="."]
+[node name="setting" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 128.0
-grow_vertical = 2
-editable = false
-flat = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_bottom = 67.0
+grow_horizontal = 0
+icon = ExtResource("3_g00px")
 
-[node name="ket" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 128.0
-offset_right = 583.0
-offset_bottom = 128.0
-editable = false
-
-[node name="setting" type="Button" parent="ket"]
+[node name="delete" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -72.0
+offset_left = -68.0
+offset_top = -67.0
 grow_horizontal = 0
 grow_vertical = 0
-icon = ExtResource("1_678h0")
+icon = ExtResource("4_78br3")
 
-[node name="delete" type="Button" parent="ket"]
-visible = false
-layout_mode = 0
-offset_left = 310.0
-offset_top = 56.0
-offset_right = 382.0
-offset_bottom = 128.0
-icon = ExtResource("2_5hb7e")
-
-[node name="CheckButton" type="CheckButton" parent="ket"]
+[node name="name" type="LineEdit" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -44.0
-offset_bottom = 42.0
-grow_horizontal = 0
-expand_icon = true
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 403.0
+offset_bottom = -6.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_f2q77")
+theme_override_font_sizes/font_size = 21
+editable = false
+flat = true
 
-[node name="Line2D" type="Line2D" parent="."]
-visible = false
-points = PackedVector2Array(0, 65, 585, 65)
-default_color = Color(0.0353462, 0.0353462, 0.0353462, 1)
+[node name="ket" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 5.0
+offset_right = 540.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("5_f2q77")
+theme_override_font_sizes/font_size = 17
+editable = false
 
-[connection signal="pressed" from="ket/setting" to="." method="_on_setting_pressed"]
-[connection signal="button_down" from="ket/delete" to="." method="_on_delete_button_down"]
-[connection signal="toggled" from="ket/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]
+[connection signal="button_down" from="delete" to="." method="_on_delete_button_down"]

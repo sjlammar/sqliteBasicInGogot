@@ -11,13 +11,13 @@ func _process(delta):
 	pass
 
 
-func _on_main_button_down():
+func _on_left_button_down():
+	get_tree().change_scene_to_file("res://user/user_task.tscn")
+
+
+func _on_home_button_down():
 	get_tree().change_scene_to_file("res://main.tscn")
 
 
-func _on_habit_button_down():
-	get_tree().change_scene_to_file("res://Habit/habit_page.tscn")
-
-
-func _on_task_button_down():
-	get_tree().change_scene_to_file("res://Task/task_scene.tscn")
+func _on_right_button_down():
+	get_tree().change_scene_to_file("res://user/user_habit.tscn")

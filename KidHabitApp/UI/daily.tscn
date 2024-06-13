@@ -35,6 +35,16 @@ offset_bottom = 63.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 1
+editable = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 8.0
+offset_right = 503.0
+offset_bottom = 39.0
+text = "NOTE"
 
 [connection signal="item_selected" from="habit" to="." method="_on_habit_item_selected"]
 [connection signal="item_selected" from="tipe" to="." method="_on_tipe_item_selected"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
